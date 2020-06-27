@@ -1,0 +1,33 @@
+<html>
+  <head>
+    Piedra, Papel o Tijeras con if
+  </head>
+  <script>
+    window.onload = function () {
+      var jugador = prompt("Piedra, Papel o Tijeras?", "");
+      var elements = ["piedra", "papel", "tijeras"];
+
+      var maquina = elements[Math.floor(Math.random() * elements.length)];
+
+      var resultado = "";
+
+      function juego() {
+        if (jugador === maquina) {
+          resultado = "empate";
+        } else if (jugador === "papel") {
+          resultado = maquina === "tijeras" ? "perdiste" : "ganaste";
+        } else if (jugador === "piedra") {
+          resultado = maquina === "papel" ? "ganaste" : "perdiste";
+        } else if (jugador === "tijeras") {
+          resultado = maquina === "piedra" ? "perdiste" : "ganaste";
+        } else {
+          resultado = "error";
+        }
+        return resultado;
+      }
+
+      juego();
+      alert(resultado);
+    };
+  </script>
+</html>

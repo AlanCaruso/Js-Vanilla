@@ -1,0 +1,45 @@
+<html>
+  <head>
+    Piedra, Papel o Tijeras con switch
+  </head>
+  <script>
+    window.onload = function () {
+      var userPlays;
+      var machinePlays;
+
+      function startGame() {
+        userPlays = prompt("Piedra, Papel o Tijera?", "");
+        machinePlays = getMachinePlays();
+        if (userPlays) validateWiner();
+      }
+
+      function getMachinePlays() {
+        var number = Math.floor(Math.random() * 2);
+        var selection;
+        if (number === 0) selection = "piedra";
+        else if (number === 1) selection = "papel";
+        else selection = "tijera";
+        return selection;
+      }
+      function validateWiner() {
+        switch (userPlays) {
+          case "piedra":
+            if (machinePlays === "tijera") alert("Ganaste!");
+            else alert("Perdiste :(");
+            break;
+          case "papel":
+            if (machinePlays === "piedra") alert("Ganaste!");
+            else alert("Perdiste :(");
+            break;
+          case "tijera":
+            if (machinePlays === "papel") alert("Ganaste!");
+            else alert("Perdiste :(");
+            break;
+          default:
+            alert("Opcion Invalida");
+        }
+      }
+      startGame();
+    };
+  </script>
+</html>
