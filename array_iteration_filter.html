@@ -26,8 +26,25 @@
       return articulo.nombre;
     });
 
+    //Find Iteration
+    var findArticle = articulos.find(function (articulo) {
+      return articulo.nombre === "Laptop";
+    });
+
+    //ForEach Method
+    articulos.forEach(function (articulo) {
+      console.log(articulo.nombre);
+    });
+
+    //Some Iteration
+    var articulosBaratos = articulos.some(function (articulo) {
+      return articulo.costo <= 700;
+    });
+
     console.log(articulosFiltrados);
     console.log(nombreArticulos);
+    console.log(findArticle);
+    console.log(articulosBaratos);
   </script>
   <body>
     <div></div>
