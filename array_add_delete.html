@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array add - delete</title>
+  </head>
+  <script>
+    //Creando Array de numeros
+    let numArray = [1, 2, 3, 4, 5];
+
+    //Declarando funcion
+    function newNum() {
+      numArray.push(6, 7);
+      console.log(numArray);
+    }
+    newNum();
+
+    //Creando un array tipo string
+    let teamArray = [
+      "Ruben",
+      "Guille",
+      "Nico",
+      "Alan",
+      "Diego",
+      "Tesi",
+      "Leo",
+      "Tobi",
+      "Maty",
+      "Mari",
+    ];
+    console.log(teamArray);
+    //Funcion agrega integrante
+    function addTeam() {
+      //Agregando elemento
+      teamArray.push("Nuevo integrante");
+      console.log(teamArray);
+    }
+    addTeam();
+  </script>
+  <body></body>
+</html>
