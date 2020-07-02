@@ -16,11 +16,18 @@
       { nombre: "Audifonos", costo: 1700 },
     ];
 
+    // Cost Filter
     var articulosFiltrados = articulos.filter(function (articulo) {
       return articulo.costo <= 500;
     });
 
+    //Map Iteration
+    var nombreArticulos = articulos.map(function (articulo) {
+      return articulo.nombre;
+    });
+
     console.log(articulosFiltrados);
+    console.log(nombreArticulos);
   </script>
   <body>
     <div></div>

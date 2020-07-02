@@ -1,3 +1,4 @@
+// Filter Method
 var articulos = [
   { nombre: "Bici", costo: 3000 },
   { nombre: "TV", costoCash: 2500 },
@@ -10,4 +11,9 @@ var articulos = [
 
 var articulosFiltrados = articulos.filter(function (articulo) {
   return articulo.costo <= 500;
+});
+
+//Map Method
+var nombreArticulos = articulos.map(function (articulo) {
+  return articulo.nombre;
 });
