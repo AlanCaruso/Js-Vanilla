@@ -12,8 +12,35 @@
 
     <script>
       //Global Scope
+      var message = "Hello, Alan";
+      var hola = function (message) {
+        console.log("say:" + message);
+      };
+
       //Function Scope
+      function printNumbersFunction() {
+        var i;
+        for (i = 0; i < 10; i++) {
+          function eventuallyPrintNumber(n) {
+            setTimeout(function () {
+              console.log(n);
+            }, 100);
+          }
+          eventuallyPrintNumber(i);
+        }
+      }
+      printNumbersFunction();
+
       //Block Scope
+      function printNumbersBlock() {
+        for (let i = 0; i < 10; i++) {
+          setTimeout(function () {
+            console.log(i);
+          }, 100);
+        }
+      }
+      printNumbersBlock();
+
       //Module Scope
     </script>
   </body>

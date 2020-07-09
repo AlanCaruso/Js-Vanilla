@@ -1,23 +1,23 @@
-// Guardando elementos
-const video = document.querySelector("video");
-const button = document.querySelector("button");
-
 //Generando clase y configuracion para el video
 function MediaPlayer(config) {
   this.media = config.el;
 }
 //Metiendo metodos al prototype - trabajando con clases
 MediaPlayer.prototype.play = function () {
-  //Condicional si esta play o pause
-  if (video.paused) {
-    video.play();
+  this.media.play();
+};
+MediaPlayer.prototype.pause = function () {
+  this.media.pause();
+};
+
+MediaPlayer.prototype.togglePlay = function () {
+  if (this.media.paused) {
+    this.play();
   } else {
-    video.pause();
+    this.pause();
   }
 };
 
-//Instanciando dato del reproductor con clase de video
-const player = new MediaPlayer({ el: video });
+//Condicional si esta play o pause
 
-//Generando accion de play en boton
-button.onclick = () => player.play();
+export default MediaPlayer;
