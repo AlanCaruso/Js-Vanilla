@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closures</title>
+  </head>
+  <body>
+    <p>Abre la consola</p>
+    <script>
+      // Closures
+
+      //printColor
+      let colorGreen = "green";
+
+      function printColor() {
+        console.log(colorGreen);
+      }
+
+      printColor();
+
+      //IFFE
+      (function () {
+        let colorGrey = "grey";
+
+        function printColor() {
+          console.log(colorGrey);
+        }
+        printColor();
+      });
+
+      function makeColorPrinter(color) {
+        colorMessage = `The color is ${color}`;
+        return function () {
+          console.log(colorMessage);
+        };
+      }
+
+      let redColorPrinter = makeColorPrinter("red");
+      console.log(redColorPrinter());
+
+      //Private Variables
+      const counter = {
+        count: 3,
+      };
+      console.log(counter.count);
+
+      function makeCounter(n) {
+        let count = n;
+
+        return {
+          increse: function () {
+            count = count + 1;
+          },
+          decrease: function () {
+            count = count - 1;
+          },
+          getcount: function () {
+            return count;
+          },
+        };
+      }
+
+      let counterPrinter = makeCounter(7);
+      console.log("The counter is " + counterPrinter.getcount());
+      counterPrinter.increse();
+      counterPrinter.increse();
+      counterPrinter.increse();
+      console.log("The counter is " + counterPrinter.getcount());
+      counterPrinter.decrease();
+      counterPrinter.decrease();
+      console.log("The counter is " + counterPrinter.getcount());
+    </script>
+  </body>
+</html>
